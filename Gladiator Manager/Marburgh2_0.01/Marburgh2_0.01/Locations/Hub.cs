@@ -13,6 +13,8 @@ public class Hub
     static bool audience;
     static bool fightsToday = true;
     static Display display;
+    public static Gladiator gladiatorWhoFought;
+    public static int playerGladiatorOutcome;
 
     public static void Start()
     {
@@ -87,11 +89,13 @@ public class Hub
             else if (choice == "0")
             {
                 day++;
+                Recap(playerGladiatorOutcome, gladiatorWhoFought);
                 player.actions = 3;
                 if (day % 3 == 0) Slaver.NewStock();
                 // All the next day stuff
                 fightsToday = true;
-
+                playerGladiatorOutcome = 0;
+                gladiatorWhoFought = null;
             }
             else if (choice == "s") display = Display.Stats;
             else if (choice == "e") display = Display.Equipment;
@@ -103,6 +107,20 @@ public class Hub
         Write.Line("YOU ARE IN THE NEXT STAGE OF THE GAME! CONGRATS!");
         Write.KeyPress();
         Environment.Exit(0);
+    }
+
+    private static void Recap(int playerGladiatorOutcome, Gladiator gladiatorWhoFought)
+    {
+        Console.Clear();
+        if (playerGladiatorOutcome == 1)
+        {
+
+        }
+        else if (playerGladiatorOutcome == 2)
+        {
+
+        }
+        Write.KeyPress();
     }
 
     private static void ScheduleDisplay()
