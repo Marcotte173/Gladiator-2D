@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.0": {
+      "Marburgh2_0.01/1.0.0": {
+        "runtime": {
+          "Marburgh2_0.01.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Marburgh2_0.01/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

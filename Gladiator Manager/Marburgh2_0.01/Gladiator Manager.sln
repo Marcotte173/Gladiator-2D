@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gladiator Manager", "Marburgh2_0.01\Gladiator Manager.csproj", "{DD4B9626-1C6C-4888-887E-2463C853FDC1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD4B9626-1C6C-4888-887E-2463C853FDC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD4B9626-1C6C-4888-887E-2463C853FDC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD4B9626-1C6C-4888-887E-2463C853FDC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD4B9626-1C6C-4888-887E-2463C853FDC1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A8AB6516-EB94-4C92-B169-8991FFD9C1AE}
+	EndGlobalSection
+EndGlobal

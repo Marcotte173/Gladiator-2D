@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Marcotte\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Marcotte\\.nuget\\packages"
+    ]
+  }
+}
