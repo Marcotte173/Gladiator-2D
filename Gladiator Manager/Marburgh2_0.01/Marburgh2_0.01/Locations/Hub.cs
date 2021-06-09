@@ -88,14 +88,22 @@ public class Hub
             }
             else if (choice == "0")
             {
-                day++;
-                Recap(playerGladiatorOutcome, gladiatorWhoFought);
-                player.actions = 3;
-                if (day % 3 == 0) Slaver.NewStock();
-                // All the next day stuff
-                fightsToday = true;
-                playerGladiatorOutcome = 0;
-                gladiatorWhoFought = null;
+                if (fightsToday)
+                {
+                    Console.Clear();
+                    Write.Line("Your Gladiators have not fought today\nAre you sure you want to move on to tomorrow?");
+                    if (Return.Confirm())
+                    {
+                        day++;
+                        Recap(playerGladiatorOutcome, gladiatorWhoFought);
+                        player.actions = 3;
+                        if (day % 3 == 0) Slaver.NewStock();
+                        // All the next day stuff
+                        fightsToday = true;
+                        playerGladiatorOutcome = 0;
+                        gladiatorWhoFought = null;
+                    }
+                }                
             }
             else if (choice == "s") display = Display.Stats;
             else if (choice == "e") display = Display.Equipment;
@@ -144,9 +152,11 @@ public class Hub
         Write.Line(58, n, "Vs.");
         if (schedule[0].player) Write.Line(10, n, Color.PLAYER + schedule[0].name + Color.RESET);
         else Write.Line(10, n, Color.OWNER + schedule[0].name + Color.RESET);
-        Write.Line(35, n, Color.NAME + schedule[0].roster[0].name + Color.RESET);
+        if(schedule[0].roster.Count > 0) Write.Line(35, n, Color.NAME + schedule[0].roster[0].name + Color.RESET);
+        else Write.Line(35, n, Color.DAMAGE + "Unavailable" + Color.RESET);
 
-        Write.Line(70, n, Color.NAME + schedule[1].roster[0].name + Color.RESET);
+        if (schedule[1].roster.Count>0) Write.Line(70, n, Color.NAME + schedule[1].roster[0].name + Color.RESET);
+        else Write.Line(70, n, Color.DAMAGE + "Unavailable" + Color.RESET);
         if (schedule[1].player) Write.Line(95, n, Color.PLAYER + schedule[1].name + Color.RESET);
         else Write.Line(95, n, Color.OWNER + schedule[1].name + Color.RESET);
         
@@ -155,9 +165,11 @@ public class Hub
         Write.Line(58, n+2, "Vs.");
         if (schedule[2].player) Write.Line(10, n + 2, Color.PLAYER + schedule[2].name + Color.RESET);
         else Write.Line(10, n + 2, Color.OWNER + schedule[2].name + Color.RESET);
-        Write.Line(35, n+2, Color.NAME + schedule[2].roster[0].name + Color.RESET);
+        if (schedule[2].roster.Count > 0) Write.Line(35, n+2, Color.NAME + schedule[2].roster[0].name + Color.RESET);
+        else Write.Line(35, n + 2, Color.DAMAGE + "Unavailable" + Color.RESET);
 
-        Write.Line(70, n + 2, Color.NAME + schedule[3].roster[0].name + Color.RESET);
+        if (schedule[3].roster.Count > 0) Write.Line(70, n + 2, Color.NAME + schedule[3].roster[0].name + Color.RESET);
+        else Write.Line(70, n + 2, Color.DAMAGE + "Unavailable" + Color.RESET);
         if (schedule[3].player) Write.Line(95, n + 2, Color.PLAYER + schedule[3].name + Color.RESET);
         else Write.Line(95, n + 2, Color.OWNER + schedule[3].name + Color.RESET);
         
@@ -166,9 +178,11 @@ public class Hub
         Write.Line(58, n + 4, "Vs.");
         if (schedule[4].player) Write.Line(10, n + 4, Color.PLAYER + schedule[4].name + Color.RESET);
         else Write.Line(10, n + 4, Color.OWNER + schedule[4].name + Color.RESET);
-        Write.Line(35, n + 4, Color.NAME + schedule[4].roster[0].name + Color.RESET);
+        if (schedule[4].roster.Count > 0) Write.Line(35, n + 4, Color.NAME + schedule[4].roster[0].name + Color.RESET);
+        else Write.Line(35, n + 4, Color.DAMAGE + "Unavailable" + Color.RESET);
 
-        Write.Line(70, n + 4, Color.NAME + schedule[5].roster[0].name + Color.RESET);
+        if (schedule[5].roster.Count > 0) Write.Line(70, n + 4, Color.NAME + schedule[5].roster[0].name + Color.RESET);
+        else Write.Line(70, n + 4, Color.DAMAGE + "Unavailable" + Color.RESET);
         if (schedule[5].player) Write.Line(95, n + 4, Color.PLAYER + schedule[5].name + Color.RESET);
         else Write.Line(95, n + 4, Color.OWNER + schedule[5].name + Color.RESET);
         

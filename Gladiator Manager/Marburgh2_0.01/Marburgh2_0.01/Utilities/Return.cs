@@ -214,6 +214,18 @@ public class Return
         return false;
     }   
 
+    internal bool CanHaveAMatch(Gladiator a, Gladiator b)
+    {
+        if (a == null || b == null) return false;
+        if (a.recovering || b.recovering) return false;
+        return true;
+    }
+
+    internal bool GladiatorAVailable(Gladiator g)
+    {
+
+    }
+
     public static void GladiatorCurrentStatus(Gladiator gladiator, int x)
     {
         //Character Info
