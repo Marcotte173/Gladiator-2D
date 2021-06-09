@@ -112,13 +112,20 @@ public class Hub
     private static void Recap(int playerGladiatorOutcome, Gladiator gladiatorWhoFought)
     {
         Console.Clear();
+        if (playerGladiatorOutcome == 0)
+        {
+            Write.Line(15, 2, "Your Gladiators did not fight today. You are gaining a reputation as a coward");
+            player.prestige -= 10;
+        }
         if (playerGladiatorOutcome == 1)
         {
-
+            Write.Line(15, 2, "Your gladiator won today. The emperor is pleased");
+            player.prestige += 5;
         }
         else if (playerGladiatorOutcome == 2)
         {
-
+            Write.Line(15, 2, "Your gladiator lost today. The emperor is not pleased");
+            player.prestige -= 5;
         }
         Write.KeyPress();
     }
