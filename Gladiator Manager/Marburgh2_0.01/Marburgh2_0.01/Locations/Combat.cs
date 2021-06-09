@@ -149,16 +149,8 @@ public class Combat
         Console.Clear();
         if (surrender) Write.Line(40, 1, $"{loser.name} has surrendered! {winner.name} has defeated {loser.name}");
         else Write.Line(45, 1, $"{winner.name} has defeated {loser.name}");
-        if (winner.Owner.player)
-        {
-            Hub.playerGladiatorOutcome = 1;
-            Hub.gladiatorWhoFought = winner;
-        }
-        else if (loser.Owner.player)
-        {
-            Hub.playerGladiatorOutcome = 2;
-            Hub.gladiatorWhoFought = loser;
-        }
+        winner.lastFightOutcome = 1;
+        loser.lastFightOutcome = 2;
         winner.wins++;
         loser.losses++;
         Winner();

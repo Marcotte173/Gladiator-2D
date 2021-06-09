@@ -25,6 +25,7 @@ public class Gladiator
     public bool missingRightArm;
     public bool missingLeg;
     public bool recovering;
+    public int lastFightOutcome;
 
     public Gladiator()
     {

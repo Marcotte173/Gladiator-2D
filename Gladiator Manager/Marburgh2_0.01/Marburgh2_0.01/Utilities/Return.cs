@@ -214,17 +214,13 @@ public class Return
         return false;
     }   
 
-    internal bool CanHaveAMatch(Gladiator a, Gladiator b)
+    internal static bool CanHaveAMatch(Gladiator a, Gladiator b)
     {
-        if (a == null || b == null) return false;
-        if (a.recovering || b.recovering) return false;
+        if (GladiatorUnavailable(a) ||GladiatorUnavailable(b)) return false;
         return true;
     }
 
-    internal bool GladiatorAVailable(Gladiator g)
-    {
-
-    }
+    internal static bool GladiatorUnavailable(Gladiator g) => g == null || g.recovering;
 
     public static void GladiatorCurrentStatus(Gladiator gladiator, int x)
     {

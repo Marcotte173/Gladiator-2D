@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tmarcott\\source\\repos\\Marcotte173\\Gladiator-2D\\Gladiator Manager\\Marburgh2_0.01\\Marburgh2_0.01\\Gladiator Manager.csproj": {}
+    "C:\\Users\\tmarcott\\Source\\Repos\\Marcotte173\\Gladiator-2D\\Gladiator Manager\\Marburgh2_0.01\\Marburgh2_0.01\\Gladiator Manager.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tmarcott\\source\\repos\\Marcotte173\\Gladiator-2D\\Gladiator Manager\\Marburgh2_0.01\\Marburgh2_0.01\\Gladiator Manager.csproj": {
+    "C:\\Users\\tmarcott\\Source\\Repos\\Marcotte173\\Gladiator-2D\\Gladiator Manager\\Marburgh2_0.01\\Marburgh2_0.01\\Gladiator Manager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tmarcott\\source\\repos\\Marcotte173\\Gladiator-2D\\Gladiator Manager\\Marburgh2_0.01\\Marburgh2_0.01\\Gladiator Manager.csproj",
+        "projectUniqueName": "C:\\Users\\tmarcott\\Source\\Repos\\Marcotte173\\Gladiator-2D\\Gladiator Manager\\Marburgh2_0.01\\Marburgh2_0.01\\Gladiator Manager.csproj",
         "projectName": "Gladiator Manager",
-        "projectPath": "C:\\Users\\tmarcott\\source\\repos\\Marcotte173\\Gladiator-2D\\Gladiator Manager\\Marburgh2_0.01\\Marburgh2_0.01\\Gladiator Manager.csproj",
+        "projectPath": "C:\\Users\\tmarcott\\Source\\Repos\\Marcotte173\\Gladiator-2D\\Gladiator Manager\\Marburgh2_0.01\\Marburgh2_0.01\\Gladiator Manager.csproj",
         "packagesPath": "C:\\Users\\tmarcott\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tmarcott\\source\\repos\\Marcotte173\\Gladiator-2D\\Gladiator Manager\\Marburgh2_0.01\\Marburgh2_0.01\\obj\\",
+        "outputPath": "C:\\Users\\tmarcott\\Source\\Repos\\Marcotte173\\Gladiator-2D\\Gladiator Manager\\Marburgh2_0.01\\Marburgh2_0.01\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
