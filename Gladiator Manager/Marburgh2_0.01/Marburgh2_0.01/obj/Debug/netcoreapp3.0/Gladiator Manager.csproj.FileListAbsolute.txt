@@ -35,3 +35,16 @@ C:\Gladiator Manager\Marburgh2_0.01\Marburgh2_0.01\bin\Debug\netcoreapp3.0\Gladi
 C:\Gladiator Manager\Marburgh2_0.01\Marburgh2_0.01\bin\Debug\netcoreapp3.0\Gladiator Manager.dll
 C:\Gladiator Manager\Marburgh2_0.01\Marburgh2_0.01\bin\Debug\netcoreapp3.0\Gladiator Manager.pdb
 C:\Gladiator Manager\Marburgh2_0.01\Marburgh2_0.01\obj\Debug\netcoreapp3.0\Gladiator Manager.genruntimeconfig.cache
+C:\Users\tmarcott\source\repos\Marcotte173\Gladiator-2D\Gladiator Manager\Marburgh2_0.01\Marburgh2_0.01\bin\Debug\netcoreapp3.0\Gladiator Manager.exe
+C:\Users\tmarcott\source\repos\Marcotte173\Gladiator-2D\Gladiator Manager\Marburgh2_0.01\Marburgh2_0.01\bin\Debug\netcoreapp3.0\Gladiator Manager.deps.json
+C:\Users\tmarcott\source\repos\Marcotte173\Gladiator-2D\Gladiator Manager\Marburgh2_0.01\Marburgh2_0.01\bin\Debug\netcoreapp3.0\Gladiator Manager.runtimeconfig.json
+C:\Users\tmarcott\source\repos\Marcotte173\Gladiator-2D\Gladiator Manager\Marburgh2_0.01\Marburgh2_0.01\bin\Debug\netcoreapp3.0\Gladiator Manager.runtimeconfig.dev.json
+C:\Users\tmarcott\source\repos\Marcotte173\Gladiator-2D\Gladiator Manager\Marburgh2_0.01\Marburgh2_0.01\bin\Debug\netcoreapp3.0\Gladiator Manager.dll
+C:\Users\tmarcott\source\repos\Marcotte173\Gladiator-2D\Gladiator Manager\Marburgh2_0.01\Marburgh2_0.01\bin\Debug\netcoreapp3.0\Gladiator Manager.pdb
+C:\Users\tmarcott\source\repos\Marcotte173\Gladiator-2D\Gladiator Manager\Marburgh2_0.01\Marburgh2_0.01\obj\Debug\netcoreapp3.0\Gladiator Manager.csprojAssemblyReference.cache
+C:\Users\tmarcott\source\repos\Marcotte173\Gladiator-2D\Gladiator Manager\Marburgh2_0.01\Marburgh2_0.01\obj\Debug\netcoreapp3.0\Gladiator Manager.AssemblyInfoInputs.cache
+C:\Users\tmarcott\source\repos\Marcotte173\Gladiator-2D\Gladiator Manager\Marburgh2_0.01\Marburgh2_0.01\obj\Debug\netcoreapp3.0\Gladiator Manager.AssemblyInfo.cs
+C:\Users\tmarcott\source\repos\Marcotte173\Gladiator-2D\Gladiator Manager\Marburgh2_0.01\Marburgh2_0.01\obj\Debug\netcoreapp3.0\Gladiator Manager.csproj.CoreCompileInputs.cache
+C:\Users\tmarcott\source\repos\Marcotte173\Gladiator-2D\Gladiator Manager\Marburgh2_0.01\Marburgh2_0.01\obj\Debug\netcoreapp3.0\Gladiator Manager.dll
+C:\Users\tmarcott\source\repos\Marcotte173\Gladiator-2D\Gladiator Manager\Marburgh2_0.01\Marburgh2_0.01\obj\Debug\netcoreapp3.0\Gladiator Manager.pdb
+C:\Users\tmarcott\source\repos\Marcotte173\Gladiator-2D\Gladiator Manager\Marburgh2_0.01\Marburgh2_0.01\obj\Debug\netcoreapp3.0\Gladiator Manager.genruntimeconfig.cache

@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "foFBOt3TwKxbeGFyjNIYFiMdduI8BVyP+WG+jNLjfvKw/FYO3zPdiq6/J1OOh6XL+R+Wj5eBYfh/omzlMwE9Rw==",
+  "dgSpecHash": "jieGJO4fqW/8hmAX7SyIY2GHbXHOe3ogb4UXToOPdlpuKatwOF+Id52RXuk8r1D4/xtVXnvkBneovQjl0dt84g==",
   "success": true,
-  "projectFilePath": "C:\\Gladiator Manager\\Marburgh2_0.01\\Marburgh2_0.01\\Gladiator Manager.csproj",
+  "projectFilePath": "C:\\Users\\tmarcott\\Source\\Repos\\Marcotte173\\Gladiator-2D\\Gladiator Manager\\Marburgh2_0.01\\Marburgh2_0.01\\Gladiator Manager.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Marcotte\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.0.1\\microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512",
-    "C:\\Users\\Marcotte\\.nuget\\packages\\microsoft.netcore.app.ref\\3.0.0\\microsoft.netcore.app.ref.3.0.0.nupkg.sha512",
-    "C:\\Users\\Marcotte\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.0.3\\microsoft.netcore.app.host.win-x64.3.0.3.nupkg.sha512",
-    "C:\\Users\\Marcotte\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.0.0\\microsoft.windowsdesktop.app.ref.3.0.0.nupkg.sha512"
+    "C:\\Users\\tmarcott\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.0.3\\microsoft.netcore.app.host.win-x64.3.0.3.nupkg.sha512",
+    "C:\\Users\\tmarcott\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.0.1\\microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512",
+    "C:\\Users\\tmarcott\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.0.0\\microsoft.windowsdesktop.app.ref.3.0.0.nupkg.sha512",
+    "C:\\Users\\tmarcott\\.nuget\\packages\\microsoft.netcore.app.ref\\3.0.0\\microsoft.netcore.app.ref.3.0.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -13,8 +13,7 @@ public class Hub
     static bool audience;
     static bool fightsToday = true;
     static Display display;
-    public static Gladiator gladiatorWhoFought;
-    public static int playerGladiatorOutcome;
+    public static List<Gladiator> gladiatorsWhoFought = new List<Gladiator> { };
 
     public static void Start()
     {
@@ -82,20 +81,33 @@ public class Hub
                 }
                 owners = schedule;
                 ScheduleDisplay();
-                Combat.Start(schedule[0].roster[0], schedule[1].roster[0]);
-                Combat.Start(schedule[2].roster[0], schedule[3].roster[0]);
-                Combat.Start(schedule[4].roster[0], schedule[5].roster[0]);
+                gladiatorsWhoFought.Add(schedule[0].roster[0]);
+                gladiatorsWhoFought.Add(schedule[1].roster[0]);
+                gladiatorsWhoFought.Add(schedule[2].roster[0]); 
+                gladiatorsWhoFought.Add(schedule[3].roster[0]);
+                gladiatorsWhoFought.Add(schedule[4].roster[0]);
+                gladiatorsWhoFought.Add(schedule[5].roster[0]);
+                if (Return.CanHaveAMatch(schedule[0].roster[0], schedule[1].roster[0]))Combat.Start(schedule[0].roster[0], schedule[1].roster[0]);
+                if (Return.CanHaveAMatch(schedule[2].roster[0], schedule[3].roster[0]))Combat.Start(schedule[2].roster[0], schedule[3].roster[0]);
+                if (Return.CanHaveAMatch(schedule[4].roster[0], schedule[5].roster[0]))Combat.Start(schedule[4].roster[0], schedule[5].roster[0]);
             }
             else if (choice == "0")
             {
-                day++;
-                Recap(playerGladiatorOutcome, gladiatorWhoFought);
-                player.actions = 3;
-                if (day % 3 == 0) Slaver.NewStock();
-                // All the next day stuff
-                fightsToday = true;
-                playerGladiatorOutcome = 0;
-                gladiatorWhoFought = null;
+                if (fightsToday)
+                {
+                    Console.Clear();
+                    Write.Line("Your Gladiators have not fought today\nAre you sure you want to move on to tomorrow?");
+                    if (Return.Confirm())
+                    {
+                        day++;
+                        Recap();
+                        player.actions = 3;
+                        if (day % 3 == 0) Slaver.NewStock();
+                        // All the next day stuff
+                        fightsToday = true;
+                        gladiatorsWhoFought.Clear();
+                    }
+                }                
             }
             else if (choice == "s") display = Display.Stats;
             else if (choice == "e") display = Display.Equipment;
@@ -109,17 +121,35 @@ public class Hub
         Environment.Exit(0);
     }
 
-    private static void Recap(int playerGladiatorOutcome, Gladiator gladiatorWhoFought)
+    private static void Recap()
     {
         Console.Clear();
-        if (playerGladiatorOutcome == 1)
+        //You gain Prestige        
+        foreach(Gladiator g in gladiatorsWhoFought)
+        {
+            if (g.lastFightOutcome == 0)
+            {
+                if(g.Owner == player)Write.Line(15, 2, "Your Gladiators did not fight today. You are gaining a reputation as a coward");
+                g.Owner.prestige -= 10;
+            }
+            if (g.lastFightOutcome == 1)
+            {
+                if (g.Owner == player) Write.Line(15, 2, "Your gladiator won today. The emperor is pleased");
+                g.Owner.prestige += 5;
+            }
+            else if (g.lastFightOutcome == 2)
+            {
+                if (g.Owner == player) Write.Line(15, 2, "Your gladiator lost today. The emperor is not pleased");
+                g.Owner.prestige -= 5;
+            }
+            g.lastFightOutcome = 0;
+        }
+        //Gladiators Recover
+        foreach(Owner o in owners)foreach(Gladiator g in o.roster)
         {
 
         }
-        else if (playerGladiatorOutcome == 2)
-        {
-
-        }
+        //Gear gets fixed        
         Write.KeyPress();
     }
 
@@ -136,21 +166,22 @@ public class Hub
         Write.Line(0,  n, "[1]");
         Write.Line(58, n, "Vs.");
         if (schedule[0].player) Write.Line(10, n, Color.PLAYER + schedule[0].name + Color.RESET);
-        else Write.Line(10, n, Color.OWNER + schedule[0].name + Color.RESET);
-        Write.Line(35, n, Color.NAME + schedule[0].roster[0].name + Color.RESET);
-
-        Write.Line(70, n, Color.NAME + schedule[1].roster[0].name + Color.RESET);
+        else Write.Line(10, n, Color.OWNER + schedule[0].name + Color.RESET);        
+        if(Return.GladiatorUnavailable(schedule[0].roster[0])) Write.Line(35, n, Color.DAMAGE + "Unavailable" + Color.RESET);
+        else Write.Line(35, n, Color.NAME + schedule[0].roster[0].name + Color.RESET);
+        if (Return.GladiatorUnavailable(schedule[1].roster[0])) Write.Line(70, n, Color.DAMAGE + "Unavailable" + Color.RESET);
+        else Write.Line(70, n, Color.NAME + schedule[1].roster[0].name + Color.RESET);
         if (schedule[1].player) Write.Line(95, n, Color.PLAYER + schedule[1].name + Color.RESET);
-        else Write.Line(95, n, Color.OWNER + schedule[1].name + Color.RESET);
-        
+        else Write.Line(95, n, Color.OWNER + schedule[1].name + Color.RESET);        
 
         Write.Line(0,  n+2, "[2]");
         Write.Line(58, n+2, "Vs.");
         if (schedule[2].player) Write.Line(10, n + 2, Color.PLAYER + schedule[2].name + Color.RESET);
         else Write.Line(10, n + 2, Color.OWNER + schedule[2].name + Color.RESET);
-        Write.Line(35, n+2, Color.NAME + schedule[2].roster[0].name + Color.RESET);
-
-        Write.Line(70, n + 2, Color.NAME + schedule[3].roster[0].name + Color.RESET);
+        if (Return.GladiatorUnavailable(schedule[2].roster[0])) Write.Line(35, n+2, Color.DAMAGE + "Unavailable" + Color.RESET);
+        else Write.Line(35, n+2, Color.NAME + schedule[2].roster[0].name + Color.RESET);
+        if (Return.GladiatorUnavailable(schedule[3].roster[0])) Write.Line(70, n+2, Color.DAMAGE + "Unavailable" + Color.RESET);
+        else Write.Line(70, n+2, Color.NAME + schedule[3].roster[0].name + Color.RESET);
         if (schedule[3].player) Write.Line(95, n + 2, Color.PLAYER + schedule[3].name + Color.RESET);
         else Write.Line(95, n + 2, Color.OWNER + schedule[3].name + Color.RESET);
         
@@ -159,9 +190,10 @@ public class Hub
         Write.Line(58, n + 4, "Vs.");
         if (schedule[4].player) Write.Line(10, n + 4, Color.PLAYER + schedule[4].name + Color.RESET);
         else Write.Line(10, n + 4, Color.OWNER + schedule[4].name + Color.RESET);
-        Write.Line(35, n + 4, Color.NAME + schedule[4].roster[0].name + Color.RESET);
-
-        Write.Line(70, n + 4, Color.NAME + schedule[5].roster[0].name + Color.RESET);
+        if (Return.GladiatorUnavailable(schedule[4].roster[0])) Write.Line(35, n + 4, Color.DAMAGE + "Unavailable" + Color.RESET);
+        else Write.Line(35, n + 4, Color.NAME + schedule[4].roster[0].name + Color.RESET);
+        if (Return.GladiatorUnavailable(schedule[5].roster[0])) Write.Line(70, n + 4, Color.DAMAGE + "Unavailable" + Color.RESET);
+        else Write.Line(70, n + 4, Color.NAME + schedule[5].roster[0].name + Color.RESET);
         if (schedule[5].player) Write.Line(95, n + 4, Color.PLAYER + schedule[5].name + Color.RESET);
         else Write.Line(95, n + 4, Color.OWNER + schedule[5].name + Color.RESET);
         

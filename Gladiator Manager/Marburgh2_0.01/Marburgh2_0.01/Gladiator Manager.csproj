@@ -6,6 +6,7 @@
     <RootNamespace>Gladiator Manager</RootNamespace>
     <AssemblyName>Gladiator Manager</AssemblyName>
     <Authors>Marcotte</Authors>
+    <StartupObject>Marburgh2_0._01.Program</StartupObject>
   </PropertyGroup>
 
 </Project>
