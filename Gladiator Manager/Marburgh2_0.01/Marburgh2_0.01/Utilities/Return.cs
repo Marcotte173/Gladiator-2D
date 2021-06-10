@@ -220,7 +220,7 @@ public class Return
         return true;
     }
 
-    internal static bool GladiatorUnavailable(Gladiator g) => g == null || g.recovering;
+    internal static bool GladiatorUnavailable(Gladiator g) => g == null || g.hurt;
 
     public static void GladiatorCurrentStatus(Gladiator gladiator, int x)
     {

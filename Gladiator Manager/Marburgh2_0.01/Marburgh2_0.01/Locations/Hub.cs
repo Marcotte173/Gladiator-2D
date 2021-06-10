@@ -81,9 +81,15 @@ public class Hub
                 }
                 owners = schedule;
                 ScheduleDisplay();
-                Combat.Start(schedule[0].roster[0], schedule[1].roster[0]);
-                Combat.Start(schedule[2].roster[0], schedule[3].roster[0]);
-                Combat.Start(schedule[4].roster[0], schedule[5].roster[0]);
+                gladiatorsWhoFought.Add(schedule[0].roster[0]);
+                gladiatorsWhoFought.Add(schedule[1].roster[0]);
+                gladiatorsWhoFought.Add(schedule[2].roster[0]); 
+                gladiatorsWhoFought.Add(schedule[3].roster[0]);
+                gladiatorsWhoFought.Add(schedule[4].roster[0]);
+                gladiatorsWhoFought.Add(schedule[5].roster[0]);
+                if (Return.CanHaveAMatch(schedule[0].roster[0], schedule[1].roster[0]))Combat.Start(schedule[0].roster[0], schedule[1].roster[0]);
+                if (Return.CanHaveAMatch(schedule[2].roster[0], schedule[3].roster[0]))Combat.Start(schedule[2].roster[0], schedule[3].roster[0]);
+                if (Return.CanHaveAMatch(schedule[4].roster[0], schedule[5].roster[0]))Combat.Start(schedule[4].roster[0], schedule[5].roster[0]);
             }
             else if (choice == "0")
             {
@@ -138,9 +144,11 @@ public class Hub
             }
             g.lastFightOutcome = 0;
         }
-        //You gain money
-
         //Gladiators Recover
+        foreach(Owner o in owners)foreach(Gladiator g in o.roster)
+        {
+
+        }
         //Gear gets fixed        
         Write.KeyPress();
     }
