@@ -13,7 +13,7 @@ public class Body
     public int maxHp;
     public Part bodyPart;
     public Equipment equipment;
-    public bool destroyed;
+    public bool disabled;
     int maxEndurance;
     int endurance;
     int offence;

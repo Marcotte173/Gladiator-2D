@@ -145,10 +145,20 @@ public class Hub
             g.lastFightOutcome = 0;
         }
         //Gladiators Recover
-        foreach(Owner o in owners)foreach(Gladiator g in o.roster)
-        {
+        foreach(Owner o in owners)
+            foreach(Gladiator g in o.roster)
+            {
+                List<Body> disabled = new List<Body> { };               
+                if(g.head.disabled)disabled.Add(g.head);
+                if(g.torso.disabled)disabled.Add(g.torso);
+                if(g.rightArm.disabled)disabled.Add(g.rightArm);
+                if(g.leftArm.disabled)disabled.Add(g.leftArm);
+                if (g.legs.disabled) disabled.Add(g.legs);
+                if (o.healthManager)
+                {
 
-        }
+                }
+            }
         //Gear gets fixed        
         Write.KeyPress();
     }
