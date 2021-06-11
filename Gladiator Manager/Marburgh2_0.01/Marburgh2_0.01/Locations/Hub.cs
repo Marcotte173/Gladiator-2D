@@ -97,17 +97,10 @@ public class Hub
                 {
                     Console.Clear();
                     Write.Line("Your Gladiators have not fought today\nAre you sure you want to move on to tomorrow?");
-                    if (Return.Confirm())
-                    {
-                        day++;
-                        Recap();
-                        player.actions = 3;
-                        if (day % 3 == 0) Slaver.NewStock();
-                        // All the next day stuff
-                        fightsToday = true;
-                        gladiatorsWhoFought.Clear();
-                    }
-                }                
+                    if (Return.Confirm()) NextDay();
+                }   
+                else NextDay();
+
             }
             else if (choice == "s") display = Display.Stats;
             else if (choice == "e") display = Display.Equipment;
@@ -119,6 +112,17 @@ public class Hub
         Write.Line("YOU ARE IN THE NEXT STAGE OF THE GAME! CONGRATS!");
         Write.KeyPress();
         Environment.Exit(0);
+    }
+
+    public static void NextDay()
+    {
+        day++;
+        Recap();
+        player.actions = 3;
+        if (day % 3 == 0) Slaver.NewStock();
+        // All the next day stuff
+        fightsToday = true;
+        gladiatorsWhoFought.Clear();
     }
 
     private static void Recap()
