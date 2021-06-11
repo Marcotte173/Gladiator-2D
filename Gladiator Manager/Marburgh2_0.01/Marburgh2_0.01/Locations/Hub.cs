@@ -129,17 +129,17 @@ public class Hub
         {
             if (g.lastFightOutcome == 0)
             {
-                if(g.Owner == player)Write.Line(15, 2, "Your Gladiators did not fight today. You are gaining a reputation as a coward");
+                if(g.Owner == player)Write.Line("Your Gladiators did not fight today. You are gaining a reputation as a coward");
                 g.Owner.prestige -= 10;
             }
             if (g.lastFightOutcome == 1)
             {
-                if (g.Owner == player) Write.Line(15, 2, "Your gladiator won today. The emperor is pleased");
+                if (g.Owner == player) Write.Line("Your gladiator won today. The emperor is pleased");
                 g.Owner.prestige += 5;
             }
             else if (g.lastFightOutcome == 2)
             {
-                if (g.Owner == player) Write.Line(15, 2, "Your gladiator lost today. The emperor is not pleased");
+                if (g.Owner == player) Write.Line("Your gladiator lost today. The emperor is not pleased");
                 g.Owner.prestige -= 5;
             }
             g.lastFightOutcome = 0;
@@ -148,19 +148,27 @@ public class Hub
         foreach(Owner o in owners)
             foreach(Gladiator g in o.roster)
             {
-                List<Body> disabled = new List<Body> { };               
-                if(g.head.disabled)disabled.Add(g.head);
-                if(g.torso.disabled)disabled.Add(g.torso);
-                if(g.rightArm.disabled)disabled.Add(g.rightArm);
-                if(g.leftArm.disabled)disabled.Add(g.leftArm);
-                if (g.legs.disabled) disabled.Add(g.legs);
+                List<Body> injured = new List<Body> { };               
+                if(g.head.status != Status.Uninjured) injured.Add(g.head);
+                if(g.torso.status != Status.Uninjured) injured.Add(g.torso);
+                if(g.rightArm.status != Status.Uninjured) injured.Add(g.rightArm);
+                if(g.leftArm.status != Status.Uninjured) injured.Add(g.leftArm);
+                if (g.legs.status != Status.Uninjured) injured.Add(g.legs);
                 if (o.healthManager)
                 {
-
+                    if (g.Owner == player) Write.Line($"Thanks your Health Manager, {g.name} is recovering well");
+                    foreach (Body b in injured) Heal(g,b, 2);
                 }
+                else Heal(g,injured[Return.RandomInt(0, injured.Count)], 2);
             }
         //Gear gets fixed        
         Write.KeyPress();
+    }
+
+    public static void Heal(Gladiator g,Body b, int heal)
+    {        
+        b.SetHealth(heal);
+        if (g.Owner == player) Write.Line($"{g.name}'s {b.name} is healing and is now {b.status}");
     }
 
     private static void ScheduleDisplay()
